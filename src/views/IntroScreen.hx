@@ -1,6 +1,7 @@
 package views;
-import openfl.text.TextField;
 
+import openfl.text.TextField;
+import openfl.Assets;
 
 class IntroScreen extends Screen
 {
@@ -10,14 +11,13 @@ class IntroScreen extends Screen
 	{
 		super( 0xffffff );
 		
+		var raw:String = Assets.getText('txt/intro.txt');
+		
 		textElement = createField( 17 );
 		textElement.x = 25;
 		textElement.y = 25;
 		
-		textElement.text = "Existential Tarot\n";
-		textElement.appendText("  Keyboard arrows and WASD also rotate camera and Z and X zoom camera.\n");
-		textElement.appendText("Picking ----- \n");
-		textElement.appendText("  Click on the head model to draw on its texture. \n");
+		textElement.text = Assets.getText('txt/intro.txt');
 		
 		addChild( textElement );
 	}
